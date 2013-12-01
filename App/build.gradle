@@ -37,3 +37,10 @@ dependencies {
 	compile 'com.android.support:appcompat-v7:+'
     instrumentTestCompile project(':TestSupport')
 }
+
+// including the TestSupport project as an instrumentTestCompile dependency
+// does not cause the TestSupport project to be built automatically before compiling
+// the test? This forces that to be the case.
+afterEvaluate { project ->
+    project.tasks.getByName('compileDefaultFlavorTest').dependsOn ':TestSupport:assemble'
+}

@@ -100,3 +100,14 @@ $ ./gradlew clean :TestSupport:assemble connectedCheck
 
 BUILD SUCCESSFUL
 </pre>
+
+Should I have expected this to work, or have I just misunderstood something?
+
+Workaround
+----------
+
+Adding the following to App/build.gradle seems to patch things up, but maybe there's a better way?
+
+    afterEvaluate { project ->
+        project.tasks.getByName('compileDefaultFlavorTest').dependsOn ':TestSupport:assemble'
+    }
