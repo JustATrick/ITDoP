@@ -3,7 +3,7 @@ ITDoP
 
 Android new build system: is there a problem when an instrumentTest declares that it depends on a sibling project?
 
-Commit 8b433aab62051091f5a140db5af0daec69c0eb36 introduces a dependency from an instrumentTest in the App module/project onto code
+[This commit](https://github.com/JustATrick/ITDoP/commit/8b433aab62051091f5a140db5af0daec69c0eb36) introduces a dependency from an instrumentTest in the App module/project onto code
 in a module/project named TestSupport. Immediately, gradle fails to compile the test code:
 
 <pre>
