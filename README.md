@@ -1,10 +1,10 @@
 ITDoP
 =====
 
-Android new build system: is there a problem when an instrumentTest declares that it depends on a gradle sibling project?
+Android new build system: is there a problem when an instrumentTest declares that it depends on a sibling project?
 
-Having introduced a test which depends on code in a sibling module (TestSupport), gradle fails to compile
-the test code:
+Commit 8b433aa introduces a dependency from an instrumentTest in the App module/project onto code
+in a module/project named TestSupport. Immediately, gradle fails to compile the test code:
 
 <pre>
 $ ./gradlew clean connectedCheck
